@@ -17,16 +17,16 @@ public class AlunoDAO {
     }
 
     public void edita(Aluno aluno) {
-        Aluno alunEoncontrado = null;
+        Aluno alunoEncontrado = null;
         for (Aluno a :
                 alunos) {
             if (a.getId() == aluno.getId()) {
-                alunEoncontrado = a;
+                alunoEncontrado = a;
             }
-            if (alunEoncontrado != null) {
-                int posicaoDoAluno = alunos.indexOf(alunEoncontrado);
-                alunos.set(posicaoDoAluno, aluno);
-            }
+        }
+        if (alunoEncontrado != null) {
+            int posicaoDoAluno = alunos.indexOf(alunoEncontrado);
+            alunos.set(posicaoDoAluno, aluno);
         }
     }
 

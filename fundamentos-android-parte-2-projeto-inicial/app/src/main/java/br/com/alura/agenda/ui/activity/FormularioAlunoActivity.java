@@ -49,6 +49,7 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
              preencheAluno();
              dao.edita(aluno);
+             finish();
 
             }
         });
