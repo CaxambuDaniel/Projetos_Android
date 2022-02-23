@@ -4,5 +4,5 @@
 
     <item android:id="@+id/activuty_lista_alunos_menu_remover"
         android:title="Remover" />
-    <item android:title="Teste"/>
+
 </menu>
