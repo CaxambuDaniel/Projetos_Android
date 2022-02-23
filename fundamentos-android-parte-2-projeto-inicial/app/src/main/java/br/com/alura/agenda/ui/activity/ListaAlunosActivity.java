@@ -37,8 +37,10 @@ public class ListaAlunosActivity extends AppCompatActivity {
         setTitle(TITULO_APPBAR);
         configuraFabNovoAluno();
         configuraLista();
-        dao.salva(new Aluno("Daniel","949829235","daniel_caxambu@live.com"));
-        dao.salva(new Aluno("Bigbig","949829235","bigbig@live.com"));
+
+        dao.salva(new Aluno("Daniel", "949829235", "daniel_caxambu@live.com"));
+        dao.salva(new Aluno("Bigbig", "949829235", "bigbig@live.com"));
+
 
     }
 
@@ -53,7 +55,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     public boolean onContextItemSelected(@NonNull MenuItem item) {
         int itemId = item.getItemId();
         CharSequence tituloDoMenu = item.getTitle();
-        if (itemId == R.id.activuty_lista_alunos_menu_remover){
+        if (itemId == R.id.activuty_lista_alunos_menu_remover) {
 
             AdapterView.AdapterContextMenuInfo menuInfo =
                     (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
