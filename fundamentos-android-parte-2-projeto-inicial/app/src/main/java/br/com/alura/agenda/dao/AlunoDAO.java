@@ -1,5 +1,7 @@
 package br.com.alura.agenda.dao;
 
+import androidx.annotation.Nullable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,7 +31,8 @@ public class AlunoDAO {
     }
 
 
-    public Aluno buscaAlunoPeloId(Aluno aluno) {
+    @Nullable
+    private Aluno buscaAlunoPeloId(Aluno aluno) {
         for (Aluno a :
                 alunos) {
             if (a.getId() == aluno.getId()) {

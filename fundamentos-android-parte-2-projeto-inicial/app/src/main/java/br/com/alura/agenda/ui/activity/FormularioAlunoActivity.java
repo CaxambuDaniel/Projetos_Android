@@ -21,7 +21,7 @@ import br.com.alura.agenda.model.Aluno;
 public class FormularioAlunoActivity extends AppCompatActivity {
 
     private static final String TITULO_APPBAR_NOVO_ALUNO = "Novo aluno";
-    private static final String TITULO_APPBAR_EDITA_ALUNO = "Edita Aluno";
+    private static final String TITULO_APPBAR_EDITA_ALUNO = "Edita aluno";
     private EditText campoNome;
     private EditText campoTelefone;
     private EditText campoEmail;
@@ -38,12 +38,13 @@ public class FormularioAlunoActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_formulario_aluno_menu, menu);
+        getMenuInflater()
+                .inflate(R.menu.activity_formulario_aluno_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         int itemId = item.getItemId();
         if (itemId == R.id.activity_formulario_aluno_menu_salvar){
             finalizaFormulario();
