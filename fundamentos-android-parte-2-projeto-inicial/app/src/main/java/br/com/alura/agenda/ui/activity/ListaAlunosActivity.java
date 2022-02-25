@@ -25,12 +25,14 @@ import java.util.List;
 import br.com.alura.agenda.R;
 import br.com.alura.agenda.dao.AlunoDAO;
 import br.com.alura.agenda.model.Aluno;
+import br.com.alura.agenda.ui.adapter.ListaAlunosAdapter;
 
 public class ListaAlunosActivity extends AppCompatActivity {
 
     public static final String TITULO_APPBAR = "Lista de alunos";
     private final AlunoDAO dao = new AlunoDAO();
-    private ArrayAdapter<Aluno> adapter;
+    private ListaAlunosAdapter adapter;
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -119,35 +121,7 @@ public class ListaAlunosActivity extends AppCompatActivity {
     }
 
     private void configuraAdapter(ListView listaDeAlunos) {
-        adapter = new ArrayAdapter<>(
-                this,
-                R.layout.item_aluno);
-        listaDeAlunos.setAdapter(new BaseAdapter() {
-
-            private final List<Aluno> alunos = new ArrayList<>();
-
-            @Override
-            public int getCount() {
-                return alunos.size();
-            }
-
-            @Override
-            public Aluno getItem(int posicao) {
-                return alunos.get(posicao);
-            }
-
-            @Override
-            public long getItemId(int posicao) {
-                return alunos.get(posicao).getId();
-            }
-
-            @Override
-            public View getView(int i, View view, ViewGroup viewGroup) {
-                View viewCriada = LayoutInflater
-                        .from(ListaAlunosActivity.this)
-                        .inflate(R.layout.item_aluno, viewGroup);
-                return viewCriada;
-            }
-        });
+        adapter = new ListaAlunosAdapter(this);
+        listaDeAlunos.setAdapter(adapter);
     }
 }
