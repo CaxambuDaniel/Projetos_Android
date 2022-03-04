@@ -63,7 +63,6 @@
         android:text="R$243,99"
         app:layout_constraintStart_toStartOf="@id/item_pacote_dias"
         app:layout_constraintTop_toBottomOf="@id/item_pacote_dias"
-        android:textStyle="bold"
         android:textColor="@android:color/holo_green_dark"
         android:textSize="20sp"/>
 
